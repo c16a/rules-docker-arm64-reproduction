@@ -1,0 +1,16 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary")
+load("@io_bazel_rules_docker//go:image.bzl", "go_image")
+
+go_binary(
+    name = "binary",
+    srcs = ["main.go"],
+    goarch = "arm64",
+    goos = "linux",
+)
+
+go_image(
+    name = "image",
+    srcs = ["main.go"],
+    goarch = "arm64",
+    goos = "linux",
+)
